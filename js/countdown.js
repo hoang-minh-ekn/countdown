@@ -1,7 +1,8 @@
 let time = null;
 let distance = null;
-const startTime = new Date("2022/11/01").getTime();
-const endTime = new Date("2022/11/26").getTime();
+const startTime = new Date("Nov 01, 2022").getTime();
+const endTime = new Date("Nov 26, 2022 00:57:00").getTime();
+
 let finish = false;
 
 const daysE = $("#days");
@@ -11,13 +12,23 @@ const secondsE = $("#seconds");
 const countdown = $("#countdown");
 const countdownBlockE = $("#countdown-block");
 const waves = $("#waves");
+const message = $("#message");
+
+const runHeartFly = () => {
+  for (let i = 0; i <= 10; i++) {
+    const heart = createHeartFly();
+    countdown.after(heart);
+  }
+};
 
 const runCountdown = () => {
   time = setInterval(() => {
     const now = new Date().getTime();
     distance = endTime - now;
-    if (finish == true) {
+
+    if (distance / 1000 <= 0) {
       clearInterval(time);
+      runFinishCountdown();
       return;
     }
 
@@ -35,6 +46,7 @@ const runCountdown = () => {
 
     runProgress();
   }, [1000]);
+  runHeartFly();
 };
 
 const createHeartFly = () => {
@@ -51,13 +63,6 @@ const createHeartFly = () => {
   return heart;
 };
 
-const runHeartFly = () => {
-  for (let i = 0; i <= 10; i++) {
-    const heart = createHeartFly();
-    countdown.after(heart);
-  }
-};
-
 const runProgress = () => {
   const totaltime = endTime - startTime;
   const progress = 100 - (distance * 100) / totaltime;
@@ -69,7 +74,9 @@ const runFinishCountdown = () => {
   setTimeout(() => {
     runHeartDrop();
   }, 2500);
+  setTimeout(() => {
+    initSlides();
+  }, 10 * 1000 + 2500 * 2);
 };
 
 runCountdown();
-runHeartFly();

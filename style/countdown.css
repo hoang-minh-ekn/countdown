@@ -5,6 +5,7 @@
   }
 
 .screen{
+    possition:relative;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -20,7 +21,7 @@
     transition:all 1s;
 }
 .countdown-block.hide{
-   transform: scale(0)
+   transform: scale(0);
 }
 
 .countdown{
@@ -116,3 +117,15 @@
       transform: translate3d(85px,0,0);
     }
   }
+
+@media (max-width:500px) {
+        body{
+            font-size: 10px;
+        }
+        .countdown{
+            padding:1rem 2rem;
+        }
+        .countdown span:first-child{
+            font-size: 3rem;
+        }
+}
