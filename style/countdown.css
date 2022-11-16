@@ -1,0 +1,118 @@
+:root {
+    --pink1: rgba(207, 36, 176, 0.452);
+    --pink2: rgba(219, 61, 198, 0.575);
+    --scale: 2;
+  }
+
+.screen{
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    margin:0
+}
+.countdown-block{
+    position: relative;
+    overflow: hidden;
+    transition:all 1s;
+}
+.countdown-block.hide{
+   transform: scale(0)
+}
+
+.countdown{
+    position: relative;
+    display: flex;
+    gap:20px;
+    padding:5rem 10rem;
+    border:1px solid #fff;
+    overflow: hidden;
+    color:#fff;
+    bottom:0;
+}
+.waves{
+    position: absolute;
+    width: 300%;
+    height: 100%;
+    left:50%;
+    bottom: 0%;
+    transform: translateX(-50%);
+}
+
+
+.countdown span{
+    font-family: 'Bebas Neue', cursive;
+    text-transform:uppercase;
+    -webkit-text-stroke: 1px #fff;
+}
+.countdown span:first-child{
+   font-size: 7rem;
+}
+.countdown span:nth-child(2){
+    font-size: 2rem;
+}
+
+.countdown-time{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 9  ;
+}
+
+.countdown-heart{
+    background-color: red;
+    position: absolute;
+    top:100%;
+    z-index: 1;
+    width: 24px; 
+	height: 24px; 
+	background: #FF5252; 
+	clip-path: path("M12 4.419c-2.826-5.695-11.999-4.064-11.999 3.27 0 7.27 9.903 10.938 11.999 15.311 2.096-4.373 12-8.041 12-15.311 0-7.327-9.17-8.972-12-3.27z");
+    animation:fly 2s infinite;
+}
+
+.parallax > use {
+    animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+  }
+  .parallax > use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+  }
+  .parallax > use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+  }
+  .parallax > use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+  }
+  .parallax > use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+  }
+
+@keyframes rotate {
+    from{
+        transform: rotate(0);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fly {
+    to{
+        top:-50px;
+    }
+}
+@keyframes move-forever {
+    0% {
+     transform: translate3d(-90px,0,0);
+    }
+    100% { 
+      transform: translate3d(85px,0,0);
+    }
+  }

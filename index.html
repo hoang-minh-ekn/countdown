@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/countdown.css" />
+  </head>
+  <body>
+    <main>
+      <div id="screen" class="screen">
+        <div id="countdown-block" class="countdown-block">
+          <div id="countdown" class="countdown">
+            <div class="countdown-time">
+              <span id="days">00</span>
+              <span>Days</span>
+            </div>
+            <div class="countdown-time">
+              <span id="hours">00</span>
+              <span>Hours</span>
+            </div>
+            <div class="countdown-time">
+              <span id="minutes">00</span>
+              <span>Minutes</span>
+            </div>
+
+            <div class="countdown-time">
+              <span id="seconds">00</span>
+              <span>Seconds</span>
+            </div>
+          </div>
+          <svg
+            id="waves"
+            class="waves"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28"
+            preserveAspectRatio="none"
+            shape-rendering="auto"
+          >
+            <defs>
+              <path
+                id="gentle-wave"
+                d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+              />
+            </defs>
+            <g class="parallax">
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="0"
+                fill="rgba(207, 36, 176, 0.452)"
+              />
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="3"
+                fill="rgba(219, 61, 198, 0.575)"
+              />
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="5"
+                fill="rgba(207, 36, 176, 0.452)"
+              />
+              <use
+                xlink:href="#gentle-wave"
+                x="48"
+                y="7"
+                fill="rgba(219, 61, 198, 0.575)"
+              />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </main>
+    <script src="./js/variables.js"></script>
+    <script src="./js/utils.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/countdown.js"></script>
+  </body>
+</html>

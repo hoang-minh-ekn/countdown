@@ -1,0 +1,56 @@
+
+body{
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+button.next{
+    cursor: pointer;
+    position: fixed;
+    z-index: 999;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    border:2px solid #FF9F9F;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding:1rem 2rem;
+    font-weight: bold;
+    scale: 0;
+    transition: 1s ease-out;
+}
+
+.heart{
+    width: 250px;
+    aspect-ratio: 1/1;
+    position: absolute;
+    top:0;
+    animation: drop infinite linear;
+    object-fit: cover;
+    clip-path: path('M213.1,6.7c-32.4-14.4-73.7,0-88.1,30.6C110.6,4.9,67.5-9.5,36.9,6.7C2.8,22.9-13.4,62.4,13.5,110.9 C33.3,145.1,67.5,170.3,125,217c59.3-46.7,93.5-71.9,111.5-106.1C263.4,64.2,247.2,22.9,213.1,6.7z'); 
+}
+
+.heart-1{
+    animation-duration: 2s;
+}
+.heart-2{
+    animation-duration: 3s;
+}
+.heart-3{
+    animation-duration: 4s;
+}
+.heart-4{
+    animation-duration: 5s;
+}
+.heart-5{
+    animation-duration: 6s;
+}
+
+
+@keyframes drop {
+    100%{
+        top:90vh
+    }
+}
